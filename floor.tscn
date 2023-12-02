@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmv0do80i5bui"]
+
+[ext_resource type="Texture2D" uid="uid://bqk48m4f6yv7j" path="res://assets/floor.png" id="1_jxutv"]
+
+[node name="Floor" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jxutv")
+metadata/_edit_group_ = true
