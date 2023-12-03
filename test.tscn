@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjnesophnnc77"]
+[gd_scene load_steps=5 format=3 uid="uid://bjnesophnnc77"]
 
 [ext_resource type="PackedScene" uid="uid://ihtc1an0efy8" path="res://player.tscn" id="1_76lpv"]
 [ext_resource type="PackedScene" uid="uid://cmv0do80i5bui" path="res://floor.tscn" id="1_kady7"]
 [ext_resource type="PackedScene" uid="uid://dts2hsm3oigl2" path="res://wall.tscn" id="2_3sctt"]
+[ext_resource type="PackedScene" uid="uid://bbsebv58hlct2" path="res://cracked_wall.tscn" id="3_ii2co"]
 
 [node name="Test" type="Node"]
 
@@ -65,6 +66,18 @@ position = Vector2(525, 225)
 [node name="Floor11" parent="Floor" instance=ExtResource("1_kady7")]
 position = Vector2(625, 275)
 
+[node name="Floor25" parent="Floor" instance=ExtResource("1_kady7")]
+position = Vector2(475, 275)
+
+[node name="Floor26" parent="Floor" instance=ExtResource("1_kady7")]
+position = Vector2(525, 275)
+
+[node name="Floor27" parent="Floor" instance=ExtResource("1_kady7")]
+position = Vector2(525, 375)
+
+[node name="Floor28" parent="Floor" instance=ExtResource("1_kady7")]
+position = Vector2(575, 375)
+
 [node name="Floor5" parent="Floor" instance=ExtResource("1_kady7")]
 position = Vector2(625, 325)
 
@@ -99,9 +112,6 @@ position = Vector2(375, 275)
 
 [node name="Wall3" parent="Walls" instance=ExtResource("2_3sctt")]
 position = Vector2(375, 225)
-
-[node name="Wall4" parent="Walls" instance=ExtResource("2_3sctt")]
-position = Vector2(475, 275)
 
 [node name="Wall5" parent="Walls" instance=ExtResource("2_3sctt")]
 position = Vector2(375, 375)
@@ -151,9 +161,6 @@ position = Vector2(575, 425)
 [node name="Wall30" parent="Walls" instance=ExtResource("2_3sctt")]
 position = Vector2(625, 425)
 
-[node name="Wall8" parent="Walls" instance=ExtResource("2_3sctt")]
-position = Vector2(525, 275)
-
 [node name="Wall21" parent="Walls" instance=ExtResource("2_3sctt")]
 position = Vector2(525, 175)
 
@@ -199,11 +206,8 @@ position = Vector2(725, 375)
 [node name="Wall18" parent="Walls" instance=ExtResource("2_3sctt")]
 position = Vector2(625, 375)
 
-[node name="Wall19" parent="Walls" instance=ExtResource("2_3sctt")]
-position = Vector2(575, 375)
-
-[node name="Wall20" parent="Walls" instance=ExtResource("2_3sctt")]
-position = Vector2(525, 375)
+[node name="CrackedWall" parent="Walls" instance=ExtResource("3_ii2co")]
+position = Vector2(525, 325)
 
 [node name="Player" parent="." instance=ExtResource("1_76lpv")]
 position = Vector2(425, 325)

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbsebv58hlct2"]
+
+[ext_resource type="Script" path="res://cracked_wall.gd" id="1_a662h"]
+[ext_resource type="Texture2D" uid="uid://chdyeq6i6clt7" path="res://assets/cracked_wall.png" id="1_g32r4"]
+[ext_resource type="Script" path="res://interactable.gd" id="2_fkghr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7rjn"]
+size = Vector2(50, 50)
+
+[node name="CrackedWall" type="Node2D"]
+script = ExtResource("1_a662h")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g32r4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 0
+script = ExtResource("2_fkghr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_v7rjn")
+
+[connection signal="interacted" from="StaticBody2D" to="." method="_on_static_body_2d_interacted"]
