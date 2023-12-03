@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://oabhyf3j32bb"]
+
+[ext_resource type="Script" path="res://pickaxe.gd" id="1_0etpl"]
+[ext_resource type="Texture2D" uid="uid://buygnyqc60oct" path="res://assets/pickaxe.png" id="1_jyim1"]
+[ext_resource type="Script" path="res://interactable.gd" id="3_wg7ko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfhr7"]
+size = Vector2(50, 50)
+
+[node name="Pickaxe" type="Node2D"]
+script = ExtResource("1_0etpl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jyim1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_wg7ko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_qfhr7")
+
+[connection signal="interacted" from="StaticBody2D" to="." method="_on_static_body_2d_interacted"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjnesophnnc77"]
+[gd_scene load_steps=6 format=3 uid="uid://bjnesophnnc77"]
 
 [ext_resource type="PackedScene" uid="uid://ihtc1an0efy8" path="res://player.tscn" id="1_76lpv"]
 [ext_resource type="PackedScene" uid="uid://cmv0do80i5bui" path="res://floor.tscn" id="1_kady7"]
 [ext_resource type="PackedScene" uid="uid://dts2hsm3oigl2" path="res://wall.tscn" id="2_3sctt"]
 [ext_resource type="PackedScene" uid="uid://bbsebv58hlct2" path="res://cracked_wall.tscn" id="3_ii2co"]
+[ext_resource type="PackedScene" uid="uid://oabhyf3j32bb" path="res://pickaxe.tscn" id="5_rnn0s"]
 
 [node name="Test" type="Node"]
 
@@ -211,3 +212,15 @@ position = Vector2(525, 325)
 
 [node name="Player" parent="." instance=ExtResource("1_76lpv")]
 position = Vector2(425, 325)
+
+[node name="Pickaxe" parent="." instance=ExtResource("5_rnn0s")]
+position = Vector2(475, 275)
+
+[node name="Pickaxe2" parent="." instance=ExtResource("5_rnn0s")]
+position = Vector2(575, 275)
+
+[node name="Pickaxe3" parent="." instance=ExtResource("5_rnn0s")]
+position = Vector2(675, 375)
+
+[node name="Pickaxe4" parent="." instance=ExtResource("5_rnn0s")]
+position = Vector2(575, 475)
