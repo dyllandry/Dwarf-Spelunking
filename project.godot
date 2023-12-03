@@ -44,5 +44,5 @@ move_down={
 
 [layer_names]
 
-2d_physics/layer_1="wall"
+2d_physics/layer_1="barrier"
 2d_physics/layer_2="interactable"

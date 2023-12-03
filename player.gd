@@ -2,10 +2,10 @@ extends Node2D
 
 var move_distance = 50 # Move distance in pixels
 
-var wall_collision_left  = false
-var wall_collision_right = false
-var wall_collision_up    = false
-var wall_collision_down  = false
+var barrier_left  = false
+var barrier_right = false
+var barrier_up    = false
+var barrier_down  = false
 
 var interactable_left  = null
 var interactable_right = null
@@ -20,13 +20,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	var direction = Vector2.ZERO
-	if Input.is_action_just_pressed("move_left")  && !wall_collision_left:
+	if Input.is_action_just_pressed("move_left")  && !barrier_left:
 		direction.x = -1
-	if Input.is_action_just_pressed("move_right") && !wall_collision_right:
+	if Input.is_action_just_pressed("move_right") && !barrier_right:
 		direction.x = 1
-	if Input.is_action_just_pressed("move_up")    && !wall_collision_up:
+	if Input.is_action_just_pressed("move_up")    && !barrier_up:
 		direction.y = -1
-	if Input.is_action_just_pressed("move_down")  && !wall_collision_down:
+	if Input.is_action_just_pressed("move_down")  && !barrier_down:
 		direction.y = 1
 	
 	position += direction * move_distance
@@ -42,22 +42,22 @@ func _process(_delta):
 
 
 func _physics_process(_delta):
-	check_wall_collisions()
-	check_interactable()
+	update_barriers()
+	update_interactable()
 
 
-func check_wall_collisions():
-	var wall_collision_mask = 0b00000000_00000000_00000000_00000001
+func update_barriers():
+	var barrier_mask = 0b00000000_00000000_00000000_00000001
 	
-	var left_result  = ray('left',  wall_collision_mask)
-	var right_result = ray('right', wall_collision_mask)
-	var up_result    = ray('up',    wall_collision_mask)
-	var down_result  = ray('down',  wall_collision_mask)
+	var left_result  = ray('left',  barrier_mask)
+	var right_result = ray('right', barrier_mask)
+	var up_result    = ray('up',    barrier_mask)
+	var down_result  = ray('down',  barrier_mask)
 
-	wall_collision_left  = left_result.has("collider")
-	wall_collision_right = right_result.has("collider")
-	wall_collision_up    = up_result.has("collider")
-	wall_collision_down  = down_result.has("collider")
+	barrier_left  = left_result.has("collider")
+	barrier_right = right_result.has("collider")
+	barrier_up    = up_result.has("collider")
+	barrier_down  = down_result.has("collider")
 
 
 func facing_interactable(direction):
@@ -71,7 +71,7 @@ func facing_interactable(direction):
 		return true
 
 
-func check_interactable():
+func update_interactable():
 	interactable_left  = null
 	interactable_right = null
 	interactable_up    = null
