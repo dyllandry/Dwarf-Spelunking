@@ -12,7 +12,6 @@ var interactable_right = null
 var interactable_up = null
 var interactable_down = null
 
-var pickaxes: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,10 +22,6 @@ func _ready():
 func _process(_delta):
 	interact_by_input()		
 	move_by_input()
-
-
-func add_pickaxe():
-	pickaxes += 1
 
 
 func interact_by_input():
