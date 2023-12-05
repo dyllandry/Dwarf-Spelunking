@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ihtc1an0efy8"]
+[gd_scene load_steps=4 format=3 uid="uid://ihtc1an0efy8"]
 
 [ext_resource type="Texture2D" uid="uid://cb5urqw4t2vkj" path="res://assets/player.png" id="1_8ikw5"]
 [ext_resource type="Script" path="res://player.gd" id="1_buw80"]
+[ext_resource type="PackedScene" uid="uid://dg6v5jgiux241" path="res://hud.tscn" id="3_sl3ud"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_buw80")
@@ -9,3 +10,5 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_8ikw5")
+
+[node name="HUD" parent="." instance=ExtResource("3_sl3ud")]

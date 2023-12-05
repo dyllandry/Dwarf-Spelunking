@@ -2,5 +2,5 @@ extends Node2D
 
 
 func _on_static_body_2d_interacted():
-	PlayerInventory.pickaxes += 1
+	PlayerInventory.add_pickaxe()
 	queue_free()
