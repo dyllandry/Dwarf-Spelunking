@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ydsiim5obxlq"]
+[gd_scene load_steps=8 format=3 uid="uid://ydsiim5obxlq"]
 
 [ext_resource type="PackedScene" uid="uid://cmv0do80i5bui" path="res://floor.tscn" id="1_dirs6"]
 [ext_resource type="PackedScene" uid="uid://dts2hsm3oigl2" path="res://wall.tscn" id="2_a2q60"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b08ckxfah5wxi" path="res://finish_flag.tscn" id="4_ddi2d"]
 [ext_resource type="PackedScene" uid="uid://oabhyf3j32bb" path="res://pickaxe.tscn" id="4_m66xs"]
 [ext_resource type="PackedScene" uid="uid://ihtc1an0efy8" path="res://player.tscn" id="5_ef484"]
+[ext_resource type="PackedScene" uid="uid://qwjg0a7v27bk" path="res://level_3.tscn" id="5_x7i3q"]
 
 [node name="Level2" type="Node"]
 
@@ -126,6 +127,7 @@ position = Vector2(600, 325)
 
 [node name="FinishFlag" parent="." instance=ExtResource("4_ddi2d")]
 position = Vector2(700, 325)
+next_level = ExtResource("5_x7i3q")
 
 [node name="Player" parent="." instance=ExtResource("5_ef484")]
 position = Vector2(350, 325)
