@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b08ckxfah5wxi"]
+
+[ext_resource type="Texture2D" uid="uid://cydvieegmxpie" path="res://assets/finish_flag.png" id="1_kom2d"]
+[ext_resource type="Script" path="res://finish_flag.gd" id="1_njcg3"]
+[ext_resource type="Script" path="res://interactable.gd" id="3_mspg4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stopa"]
+size = Vector2(50, 50)
+
+[node name="FinishFlag" type="Node2D"]
+script = ExtResource("1_njcg3")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kom2d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_mspg4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_stopa")
+
+[connection signal="interacted" from="Sprite2D/StaticBody2D" to="." method="_on_static_body_2d_interacted"]
